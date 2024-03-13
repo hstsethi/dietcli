@@ -1,0 +1,22 @@
+{
+  "Macronutrients": {
+    "Protein": 10,
+    "Carbs": 2,
+    "Fats": 30,
+    "Fiber": 10
+  },
+  "Minerals": {
+    "Potassium": 700,
+    "Sodium": 300,
+    "Magnesium": 400,
+    "Iron": 8
+  }
+  "Vitamins": {
+    "A": 700,
+    "B12": 2,
+    "C": 30,
+    "D": 2,
+    "E": 15,
+    "K": 12
+  }
+}
