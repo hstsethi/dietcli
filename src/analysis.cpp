@@ -2,10 +2,11 @@
 #include <iostream>
 #include <rapidjson/document.h>
 #include <rapidjson/istreamwrapper.h>
+#include <sstream>
 
 void compareMacro(const std::string &consumedFilename) {
+  std::ostringstream buffer;
 
-        
   std::ifstream consumedFile(consumedFilename);
   rapidjson::IStreamWrapper consumedStream(consumedFile);
   rapidjson::Document consumed;
@@ -18,18 +19,21 @@ void compareMacro(const std::string &consumedFilename) {
 
   std::string macronutrients[4] = {"Protein", "Carbs", "Fats", "Fiber"};
 
-  for (const auto &macro : macronutrients) {
+  for (const std::string &macro : macronutrients) {
 
     int rdiamount = rdi["Macronutrients"][macro.c_str()].GetInt();
     int consumedamount = consumed["Macronutrients"][macro.c_str()].GetInt();
-    std::cout << macro << "\t"
-              << "RDI amount : " << rdiamount << "\t"
-              << "Consumed amount : " << consumedamount << "\t"
-              << "Remaining : " << rdiamount - consumedamount << "\n";
+    buffer << macro << "\t"
+           << "RDI amount : " << rdiamount << "\t"
+           << "Consumed amount : " << consumedamount << "\t"
+           << "Remaining : " << rdiamount - consumedamount << "\n";
   }
+  std::cout << buffer.str();
 }
 
 void compareMinerals(const std::string &consumedFilename) {
+  std::ostringstream buffer;
+
   std::ifstream consumedFile(consumedFilename);
   rapidjson::IStreamWrapper consumedStream(consumedFile);
   rapidjson::Document consumed;
@@ -42,21 +46,20 @@ void compareMinerals(const std::string &consumedFilename) {
 
   std::string minerals[4] = {"Potassium", "Iron", "Sodium", "Magnesium"};
 
-  for (const auto &nutrient : minerals) {
+  for (const std::string &nutrient : minerals) {
     int consumedamount = consumed["Minerals"][nutrient.c_str()].GetInt();
-    // Assuming rdi is a global or previously defined JSON object with the
-    // same structure
     int rdiamount = rdi["Minerals"][nutrient.c_str()].GetInt();
-    std::cout << nutrient << "\t"
-              << "RDI amount : " << rdiamount << "\t"
-              << "Consumed amount : " << consumedamount << "\t"
-              << "Remaining : " << rdiamount - consumedamount << "\n";
+    buffer << nutrient << "\t"
+           << "RDI amount : " << rdiamount << "\t"
+           << "Consumed amount : " << consumedamount << "\t"
+           << "Remaining : " << rdiamount - consumedamount << "\n";
   }
+
+  std::cout << buffer.str();
 }
 
-//
-
 void compareVitamins(const std::string &consumedFilename) {
+  std::ostringstream buffer;
 
   std::string vitamins[6] = {"A", "B12", "C", "D", "E", "K"};
   std::ifstream consumedFile(consumedFilename);
@@ -69,12 +72,13 @@ void compareVitamins(const std::string &consumedFilename) {
   rapidjson::Document rdi;
   rdi.ParseStream(rdiStream);
 
-  for (const auto &nutrient : vitamins) {
+  for (const std::string &nutrient : vitamins) {
     int consumedamount = consumed["Vitamins"][nutrient.c_str()].GetInt();
     int rdiamount = rdi["Vitamins"][nutrient.c_str()].GetInt();
-    std::cout << nutrient << "\t"
-              << "RDI amount : " << rdiamount << "\t"
-              << "Consumed amount : " << consumedamount << "\t"
-              << "Remaining : " << rdiamount - consumedamount << "\n";
+    buffer << nutrient << "\t"
+           << "RDI amount : " << rdiamount << "\t"
+           << "Consumed amount : " << consumedamount << "\t"
+           << "Remaining : " << rdiamount - consumedamount << "\n";
   }
+  std::cout << buffer.str();
 }

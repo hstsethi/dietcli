@@ -14,4 +14,5 @@ DietCli is written in C++ 11 with RapidJson as dependency.
 
 First make sure you that you have RapidJSON installed.
 
-Clone this repository and run ```mkdir build && cmake --build build/```
+Clone this repository and run ```mkdir build && cmake -B build/ && cmake --build build/```
+
