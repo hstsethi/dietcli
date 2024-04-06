@@ -5,7 +5,7 @@ DietCli is a blazingly fast, cross-platform, command line nutrition tracker writ
 
 Download the release or [build](build.md) it yourself.
 
-Any one of the three arguments, `macro`, `min` or `vit`, mut be provided. An optional argument for filepath of custom `consumed.json` can be provided. If the custom file is not found then it tries to find `consumed.ini` in same directory. `rdi.json` must be in same directory as program.
+Any one of the three arguments, `macro`, `min` or `vit`, mut be provided. An optional argument for filepath of custom `consumed.json` can be provided. If the custom file is not found then it tries to find `consumed.json` in same directory. `rdi.json` must be in same directory as program.
 
 
 ```
@@ -31,3 +31,10 @@ E 7
 K 3
 
 ```
+
+# Acknowledgements
+
+USDA for providing RDA of nutrients.
+
+Tencent for RapidJSON library.
+
