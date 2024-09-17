@@ -7,6 +7,9 @@ Download the release or [build](build.md) it yourself.
 
 Any one of the three arguments, `macro`, `min` or `vit`, mut be provided. An optional argument for filepath of custom `consumed.json` can be provided. If the custom file is not found then it tries to find `consumed.json` in same directory. `rdi.json` must be in same directory as program.
 
+To generate a pie chart of calorie breakdown by macro nutrient, simply run `python visualize.py`. 
+![img](pie-diet-cli-default.png)
+
 
 ```
 
