@@ -2,7 +2,7 @@
 #include <iostream>
 #include <rapidjson/document.h>
 #include <rapidjson/istreamwrapper.h>
-#include <sstream>
+#include <sstream> // For buffering the output before printing to stdout
 
 void compareMacro(const std::string &consumedFilename) {
   std::ostringstream buffer;
@@ -21,12 +21,12 @@ void compareMacro(const std::string &consumedFilename) {
 
   for (const std::string &macro : macronutrients) {
 
-    int rdiamount = rdi["Macronutrients"][macro.c_str()].GetInt();
-    int consumedamount = consumed["Macronutrients"][macro.c_str()].GetInt();
+    int rdiAmount = rdi["Macronutrients"][macro.c_str()].GetInt();
+    int consumedAmount = consumed["Macronutrients"][macro.c_str()].GetInt();
     buffer << macro << "\t"
-           << "RDI amount : " << rdiamount << "\t"
-           << "Consumed amount : " << consumedamount << "\t"
-           << "Remaining : " << rdiamount - consumedamount << "\n";
+           << "RDI amount : " << rdiAmount << "\t"
+           << "Consumed amount : " << consumedAmount << "\t"
+           << "Remaining : " << rdiAmount - consumedAmount << "\n";
   }
   std::cout << buffer.str();
 }
@@ -47,12 +47,12 @@ void compareMinerals(const std::string &consumedFilename) {
   std::string minerals[4] = {"Potassium", "Iron", "Sodium", "Magnesium"};
 
   for (const std::string &nutrient : minerals) {
-    int consumedamount = consumed["Minerals"][nutrient.c_str()].GetInt();
-    int rdiamount = rdi["Minerals"][nutrient.c_str()].GetInt();
+    int consumedAmount = consumed["Minerals"][nutrient.c_str()].GetInt();
+    int rdiAmount = rdi["Minerals"][nutrient.c_str()].GetInt();
     buffer << nutrient << "\t"
-           << "RDI amount : " << rdiamount << "\t"
-           << "Consumed amount : " << consumedamount << "\t"
-           << "Remaining : " << rdiamount - consumedamount << "\n";
+           << "RDI amount : " << rdiAmount << "\t"
+           << "Consumed amount : " << consumedAmount << "\t"
+           << "Remaining : " << rdiAmount - consumedAmount << "\n";
   }
 
   std::cout << buffer.str();
@@ -73,12 +73,12 @@ void compareVitamins(const std::string &consumedFilename) {
   rdi.ParseStream(rdiStream);
 
   for (const std::string &nutrient : vitamins) {
-    int consumedamount = consumed["Vitamins"][nutrient.c_str()].GetInt();
-    int rdiamount = rdi["Vitamins"][nutrient.c_str()].GetInt();
+    int consumedAmount = consumed["Vitamins"][nutrient.c_str()].GetInt();
+    int rdiAmount = rdi["Vitamins"][nutrient.c_str()].GetInt();
     buffer << nutrient << "\t"
-           << "RDI amount : " << rdiamount << "\t"
-           << "Consumed amount : " << consumedamount << "\t"
-           << "Remaining : " << rdiamount - consumedamount << "\n";
+           << "RDI amount : " << rdiAmount << "\t"
+           << "Consumed amount : " << consumedAmount << "\t"
+           << "Remaining : " << rdiAmount - consumedAmount << "\n";
   }
   std::cout << buffer.str();
 }
