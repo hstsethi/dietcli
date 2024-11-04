@@ -1,5 +1,7 @@
 DietCli is a blazingly fast, cross-platform, command line nutrition tracker written in C++.
 
+Note: Previously it was known as "NutritionCLI". However, that version used INI, was slow and buggy and hence is no longer supported. Though it's [source code](https://github.com/hstsethi/nutritioncli) is available for historical purposes.
+
 ## Usage
 
 Download the release or [build](build.md) it yourself.
