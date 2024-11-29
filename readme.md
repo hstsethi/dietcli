@@ -6,7 +6,8 @@ Note: Previously it was known as "NutritionCLI". However, that version used INI,
 
 Download the release or [build](build.md) it yourself.
 
-Any one of the three arguments, `macro`, `min` or `vit`, must be provided. An optional argument for filepath of custom `consumed.json` can be provided. If the custom file is not found then it tries to find `consumed.json` in same directory. `rdi.json` must be in same directory as program.
+To avoid clutter and promote a more structured, familiar approach of documentation. The documentation has been moved to man page. You can download the source and view it by `man ./dietcli.1` or read the [markdown version](docs/dietcli.md).
+
 
 To generate a pie chart of calorie breakdown by macro nutrient, simply run `python visualize.py`. 
 
