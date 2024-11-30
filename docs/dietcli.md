@@ -1,6 +1,8 @@
+% DietCLI(1)
+
 # NAME
 
-DietCLI (1)
+DietCLI 
 
 # SYNOPSIS
 
@@ -11,7 +13,6 @@ dietcli [macro|min|vit] [filepath]
 DietCli is a blazingly fast, cross-platform, command line nutrition tracker written in C++.
 
 # ARGUMENTS
-
 
 macro
 : Analyze macronutrients.

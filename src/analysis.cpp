@@ -1,4 +1,5 @@
 #include <fstream>
+
 #include <iostream>
 #include <rapidjson/document.h>
 #include <rapidjson/istreamwrapper.h>
@@ -79,6 +80,7 @@ void compareVitamins(const std::string &consumedFilename) {
            << "RDI amount : " << rdiAmount << "\t"
            << "Consumed amount : " << consumedAmount << "\t"
            << "Remaining : " << rdiAmount - consumedAmount << "\n";
+
   }
   std::cout << buffer.str();
 }

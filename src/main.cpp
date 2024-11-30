@@ -1,5 +1,6 @@
 #include "analysis.h"
 #include "util.h"
+#include <cstring>
 #include <iostream>
 
 void printHelp(const char *executableName) {
