@@ -2,6 +2,14 @@ DietCli is a blazingly fast, cross-platform, command line nutrition tracker writ
 
 Note: Previously it was known as "NutritionCLI". However, that version used INI, was slow and buggy and hence is no longer supported. Though it's [source code](https://github.com/hstsethi/nutritioncli) is available for historical purposes.
 
+"Blazingly fast", is not just in name. See the benchmark at [Kaggle](https://www.kaggle.com/code/hstsethi/dietcli-benchmark) or run it yourself. Below are the results of the whole use, including printing and calculations, **not just parsing**.:
+
+```
+real	0m0.003s
+user	0m0.001s
+sys	    0m0.002s
+```
+
 ## Usage
 
 Download the release or [build](build.md) it yourself.
